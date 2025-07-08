@@ -1,12 +1,17 @@
 <?php
-$host = getenv("DB_HOST");
-$port = getenv("DB_PORT");
-$user = getenv("DB_USER");
-$pass = getenv("DB_PASSWORD");
-$dbname = getenv("DB_NAME");
+$host = "8.tcp.ngrok.io";       // Host ngrok que expone tu MySQL
+$puerto = 19927;                 // Puerto que muestra ngrok
+$usuario = "juan";               // Usuario MySQL que creaste
+$password = "juan22";            // Contraseña de ese usuario
+$basedatos = "libro";            // Tu base de datos
 
-$conn = new mysqli($host, $user, $pass, $dbname, (int)$port);
+// Crear conexión
+$conn = new mysqli($host, $usuario, $password, $basedatos, $puerto);
+
+// Verificar conexión
 if ($conn->connect_error) {
-    die("Error de conexión: " . $conn->connect_error);
+    die("Conexión fallida: " . $conn->connect_error);
 }
+
+echo "Conexión exitosa a la base de datos";
 ?>

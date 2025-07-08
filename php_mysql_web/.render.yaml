@@ -1,0 +1,5 @@
+- key: DB_HOST
+  value: 8.tcp.ngrok.io
+
+- key: DB_PORT
+  value: 19927

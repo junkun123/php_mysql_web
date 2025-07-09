@@ -28,6 +28,7 @@ app.get('/', (req, res) => {
     if (err) {
       return res.status(500).send('Error en la consulta');
     }
+    // Aquí corregí las comillas para enviar bien el string
     res.send(`¡Hola desde Node.js! Hora del servidor: ${results[0].ahora}`);
   });
 });
